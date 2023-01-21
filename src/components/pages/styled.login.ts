@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-export const StyledLogin = styled.div`
-  margin: 0 auto;
+export const StyledLogin = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 80%;
-  vertical-align: middle;
+  width: 100%;
+  height: 100%;
 `;
