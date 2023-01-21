@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { Login } from './components/pages/login'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <h1>Hello word</h1>
+    <Login/>
   </React.StrictMode>,
 )
