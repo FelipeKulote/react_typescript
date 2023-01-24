@@ -25,7 +25,7 @@ export function Login() {
 
     const userData = await api.login(loginPayload);
     setLoading(false);
-    if (userData.statusCode) {
+    if (!userData) {
       setError(true);
       return;
     }
@@ -53,6 +53,8 @@ export function Login() {
               </button>
             </div>
             <button type="submit">ENVIAR</button>
+            <h3>Já possui uma conta?</h3>
+            
           </StyledLogin>
         </div>
       )}
