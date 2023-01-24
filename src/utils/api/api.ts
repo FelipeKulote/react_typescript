@@ -6,10 +6,27 @@ axios.defaults.headers.post["content-Type"] = "application/json";
 
 axios.interceptors.request.use(
   function (config) {
+    const token = localStorage.getItem("token");
+    if (token) {
+      config.headers = {
+        Authorization: "Bearer " + token,
+      };
+    }
     return config;
   },
   function (error) {
     return Promise.reject(error);
+  }
+);
+
+axios.interceptors.response.use(
+  function (config) {
+    return config;
+  },
+  function (error) {
+    if (error.response.status === 401) {
+      if (localStorage.getItem("token")) localStorage.removeItem("token");
+    }
   }
 );
 
