@@ -40,4 +40,13 @@ export const api = {
       alert(err);
     }
   },
+
+  getProducts: async () => {
+    try {
+      const response = await axios.get("/product");
+      return response.data;
+    } catch (err) {
+      alert(err);
+    }
+  },
 };
