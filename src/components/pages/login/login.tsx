@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { LoginForm, StyledLogin, StyledLoginPage } from "./styles";
+import { LoginForm, StyledLogin, StyledLoginPage, StyledPassword } from "./styles";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
 import { api } from "../../../utils/api/api";
 import { useNavigate } from "react-router-dom";
@@ -40,18 +40,20 @@ export function Login() {
         <StyledLoginPage>
           <LoginForm>
             <h2>LOGIN</h2>
-            <input type="text" placeholder="E-mail" name="email" required />
             <StyledLogin onSubmit={handleSubmit}>
-              <input
-                type={showPassword ? "password" : "text"}
-                placeholder="Senha"
-                name="password"
-                required
-              />
-              <button type="button" onClick={handleShowPassword}>
-                {showPassword ? <FaEyeSlash /> : <FaEye />}
-              </button>
-              </StyledLogin>
+              <input type="text" placeholder="E-mail" name="email" required />
+              <StyledPassword>
+                <input
+                  type={showPassword ? "password" : "text"}
+                  placeholder="Senha"
+                  name="password"
+                  required
+                />
+                <button type="button" onClick={handleShowPassword}>
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </button>
+              </StyledPassword>
+            </StyledLogin>
             <button type="submit">ENVIAR</button>
             <h4>Já possui uma conta?</h4>
           </LoginForm>
