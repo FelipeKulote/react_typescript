@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { api } from "../../../utils/api/api";
+import { StyledCard, StyledImage, StyledPageProduct } from "./styles";
 
 export type product = {
   id: string;
@@ -22,18 +23,20 @@ export function Products() {
   }, []);
 
   return (
-    <div>
+    <StyledPageProduct>
       <h2>Produtos</h2>
+      <StyledCard>
       {
         listProducts.map((product) => (
             <div key={product.id}>
-                <img src={product.image} alt="Imagem do produto" />
-                <h2>{product.title}</h2>
-                <h4>{product.description}</h4>
-                <h3>{product.price}</h3>
+                <StyledImage src={product.image} alt="Imagem do produto" />
+                <h3>{product.title}</h3>
+                <h5>{product.description}</h5>
+                <h4>{product.price},00</h4>
             </div>
         ))
       }
-    </div>
+      </StyledCard>
+    </StyledPageProduct>
   );
 }
