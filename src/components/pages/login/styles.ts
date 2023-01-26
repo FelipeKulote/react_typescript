@@ -20,6 +20,7 @@ export const LoginForm = styled.div`
   max-width: 400px;
   height: 500px;
   border: 2px solid white;
+  border-radius: 10px;
 
   h2 {
     margin: 20px;

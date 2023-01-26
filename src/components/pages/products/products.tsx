@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import { FaCog } from "react-icons/fa";
 import { api } from "../../../utils/api/api";
-import { StyledCard, StyledImage, StyledPageProduct } from "./styles";
+import { StyledCard, Styledconfig, StyledImage, StyledPageProduct } from "./styles";
 
 export type product = {
   id: string;
@@ -13,6 +14,7 @@ export type product = {
 export function Products() {
   const [listProducts, setListProducts] = useState<product[]>([]);
   const [search, setSearch] = useState("");
+  const [config, setConfig] = useState();
 
   async function findProducts() {
     const products = await api.getProducts();
@@ -26,30 +28,34 @@ export function Products() {
         )
       : listProducts;
 
+
+      
   useEffect(() => {
     findProducts();
   }, []);
 
-
   return (
     <StyledPageProduct>
       <h2>Produtos</h2>
-      <input
-        type="text"
-        onChange={(e) => {
-          setSearch(e.currentTarget.value);
-        }}
-        placeholder="Procurar"
-      />
+      <Styledconfig>
+        <input
+          type="text"
+          onChange={(e) => {
+            setSearch(e.currentTarget.value);
+          }}
+          placeholder="Procurar"
+        />
+        <button><FaCog/></button>
+      </Styledconfig>
       <StyledCard>
         {sortedProducts.map((product) => (
-              <div key={product.id}>
-                <StyledImage src={product.image} alt="Imagem do produto" />
-                <h3>{product.title}</h3>
-                <h5>{product.description}</h5>
-                <h4>{product.price},00</h4>
-              </div>
-            ))}
+          <div key={product.id}>
+            <StyledImage src={product.image} alt="Imagem do produto" />
+            <h3>{product.title}</h3>
+            <h5>{product.description}</h5>
+            <h4>{product.price},00</h4>
+          </div>
+        ))}
       </StyledCard>
     </StyledPageProduct>
   );

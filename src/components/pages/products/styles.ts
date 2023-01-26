@@ -10,12 +10,27 @@ export const StyledPageProduct = styled.div`
   }
 
   input {
+    margin: 20px;
     padding: 8px;
     font-size: 1.1rem;
     border-radius: 5px;
     border: none;
   }
 `;
+
+export const Styledconfig = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: transparent;
+  }
+`
 
 export const StyledCard = styled.div`
   margin: 30px;

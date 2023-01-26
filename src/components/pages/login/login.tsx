@@ -1,9 +1,9 @@
 import { FormEvent, useState } from "react";
-import { LoginForm, StyledInput, StyledLogin, StyledLoginPage } from "./styles";
-import { FaEyeSlash, FaEye } from "react-icons/fa";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
 import { api } from "../../../utils/api/api";
-import { useNavigate } from "react-router-dom";
 import { Loading } from "../../../utils/loading";
+import { LoginForm, StyledLogin, StyledLoginPage } from "./styles";
 
 export function Login() {
   const [showPassword, setShowPassword] = useState<boolean>(true);
@@ -53,10 +53,11 @@ export function Login() {
                   {showPassword ? <FaEyeSlash /> : <FaEye />}
                 </button>
               </div>
-            <StyledInput placeholder={ loginFailed ? "Usuário e/ou senha incorretos" : ""} />
+            {/* <StyledInput placeholder={ loginFailed ? "Usuário e/ou senha incorretos" : ""} /> */}
             <button type="submit">ENVIAR</button>
             </StyledLogin>
             <h4>Já possui uma conta?</h4>
+            <Link to="/form-user">Registre-se</Link>
           </LoginForm>
         </StyledLoginPage>
       )}

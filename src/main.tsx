@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Products } from "./components/pages/products/products";
 import { GlobalStyle, theme } from "./global-style";
 import { ThemeProvider } from "styled-components";
+import { FormUser } from "./components/forms/user/form-user";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/form-user" element={<FormUser />} />
         </Routes>
       </BrowserRouter>
       <GlobalStyle />

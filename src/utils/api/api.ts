@@ -27,6 +27,7 @@ axios.interceptors.response.use(
     if (error.response.status === 401) {
       if (localStorage.getItem("token")) localStorage.removeItem("token");
     }
+    throw new Error(error.response.data.message);
   }
 );
 
@@ -49,4 +50,12 @@ export const api = {
       alert(err);
     }
   },
+
+  // createUser: async (payload: UserPayload) => {
+  //   try {
+  //     const response = await axios.post("/user", payload);
+  //     return response.data;
+  //   } catch (err: any) {
+  //     HandleError({ message: err.message });
+  //   }
 };

@@ -29,7 +29,7 @@ export const theme = {
     fg: "rgba(0, 0, 0, 0.90)",
   },
   darkTheme: {
-    bg: "rgba(0, 0, 0, 0.90)",
+    bg: "rgba(0, 0, 0, 0.50)",
     fg: "rgba(255, 255, 255, 0.90)",
   },
 };
