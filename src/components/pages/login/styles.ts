@@ -11,7 +11,7 @@ export const StyledLoginPage = styled.div`
 `;
 
 export const LoginForm = styled.div`
-padding: 30px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,10 +40,33 @@ padding: 30px;
     font-size: 1.3rem;
   }
 
-  button {
-    padding: 5px;
+  div {
+    display: flex;
+    width: 90%;
+    margin: 10px;
     border-radius: 5px;
     border: none;
+    font-size: 1.3rem;
+
+    input {
+      border-radius: 5px 0 0 5px;
+      margin: 0;
+    }
+
+    button {
+      border-radius: 0 5px 5px 0;
+      background-color: white;
+      padding: 10px;
+      cursor: pointer;
+    }
+  }
+
+  button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
   }
 `;
 
@@ -55,12 +78,7 @@ export const StyledLogin = styled.form`
   width: 100%;
 `;
 
-export const StyledPassword = styled.div`
-  display: flex;
-
-
-  button {
-    border-radius: 5px;
-
-  }
-`
+export const StyledInput = styled.input`
+  background: transparent;
+  cursor: default;
+`;

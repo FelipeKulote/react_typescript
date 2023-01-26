@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { LoginForm, StyledLogin, StyledLoginPage, StyledPassword } from "./styles";
+import { LoginForm, StyledInput, StyledLogin, StyledLoginPage } from "./styles";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
 import { api } from "../../../utils/api/api";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +8,7 @@ import { Loading } from "../../../utils/loading";
 export function Login() {
   const [showPassword, setShowPassword] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<boolean>(false);
+  const [ loginFailed, setLoginFailed ] = useState<boolean>(false);
   const navigate = useNavigate();
 
   function handleShowPassword() {
@@ -26,7 +26,7 @@ export function Login() {
     const userData = await api.login(loginPayload);
     setLoading(false);
     if (!userData) {
-      setError(true);
+      setLoginFailed(true);
       return;
     }
     navigate("/products");
@@ -42,7 +42,7 @@ export function Login() {
             <h2>LOGIN</h2>
             <StyledLogin onSubmit={handleSubmit}>
               <input type="text" placeholder="E-mail" name="email" required />
-              <StyledPassword>
+              <div>
                 <input
                   type={showPassword ? "password" : "text"}
                   placeholder="Senha"
@@ -52,9 +52,10 @@ export function Login() {
                 <button type="button" onClick={handleShowPassword}>
                   {showPassword ? <FaEyeSlash /> : <FaEye />}
                 </button>
-              </StyledPassword>
-            </StyledLogin>
+              </div>
+            <StyledInput placeholder={ loginFailed ? "Usuário e/ou senha incorretos" : ""} />
             <button type="submit">ENVIAR</button>
+            </StyledLogin>
             <h4>Já possui uma conta?</h4>
           </LoginForm>
         </StyledLoginPage>
