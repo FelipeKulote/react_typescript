@@ -1,7 +1,7 @@
 import axios from "axios";
 import { LoginRequest } from "../types/requests";
 
-axios.defaults.baseURL = "http://localhost:3000";
+axios.defaults.baseURL = "https://projeto-nestjs-production.up.railway.app/api";
 axios.defaults.headers.post["content-Type"] = "application/json";
 
 axios.interceptors.request.use(
