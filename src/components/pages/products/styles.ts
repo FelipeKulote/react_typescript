@@ -8,6 +8,13 @@ export const StyledPageProduct = styled.div`
     margin-top: 20px;
     text-align: center;
   }
+
+  input {
+    padding: 8px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: none;
+  }
 `;
 
 export const StyledCard = styled.div`
