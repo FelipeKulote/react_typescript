@@ -13,7 +13,7 @@ export type UserPayload = {
 };
 
 export function FormUser() {
-
+   
   const [newUser, setNewUser] = useState<any>([]);
   const navegate = useNavigate();
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -78,6 +78,16 @@ export function FormUser() {
             name="image"
             onChange={(e) => {
               setNewUser({ ...newUser, image: e.target.value });
+            }}
+            required
+          />
+          <h4>Nível de conta</h4>
+          <input
+            type="text"
+            name="role"
+            placeholder=""
+            onChange={(e) => {
+              setNewUser({ ...newUser, role: e.target.value });
             }}
             required
           />
