@@ -60,3 +60,25 @@ export const StyledCard = styled.div`
 export const StyledImage = styled.img`
   max-width: 200px;
 `;
+
+export const ConfigButtons = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+
+  button {
+    padding: 3px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer
+  }
+`
+
+export const AddProduto = styled.button`
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100px;
+  min-height: 100px;
+  cursor: pointer;
+`

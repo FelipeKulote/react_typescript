@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { FaCog } from "react-icons/fa";
+import { FaCog, FaFileMedical } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import { api } from "../../../utils/api/api";
-import { StyledCard, Styledconfig, StyledImage, StyledPageProduct } from "./styles";
+import { AddProduto, ConfigButtons, StyledCard, Styledconfig, StyledImage, StyledPageProduct } from "./styles";
 
 export type product = {
   id: string;
@@ -14,11 +15,15 @@ export type product = {
 export function Products() {
   const [listProducts, setListProducts] = useState<product[]>([]);
   const [search, setSearch] = useState("");
-  const [config, setConfig] = useState();
+  const [config, setConfig] = useState<boolean>(false);
 
   async function findProducts() {
     const products = await api.getProducts();
     setListProducts(products);
+  }
+  
+  function handleConfig() {
+  setConfig(!config)
   }
 
   const sortedProducts =
@@ -28,8 +33,8 @@ export function Products() {
         )
       : listProducts;
 
+  const navegate = useNavigate();
 
-      
   useEffect(() => {
     findProducts();
   }, []);
@@ -45,7 +50,7 @@ export function Products() {
           }}
           placeholder="Procurar"
         />
-        <button><FaCog/></button>
+        <button onClick={handleConfig}><FaCog/></button>
       </Styledconfig>
       <StyledCard>
         {sortedProducts.map((product) => (
@@ -54,9 +59,14 @@ export function Products() {
             <h3>{product.title}</h3>
             <h5>{product.description}</h5>
             <h4>{product.price},00</h4>
+            {config && <ConfigButtons>
+              <button>Editar</button>
+              <button>Deletar</button>
+            </ConfigButtons>}
           </div>
         ))}
       </StyledCard>
+      {config &&<AddProduto><FaFileMedical/></AddProduto>}
     </StyledPageProduct>
   );
 }
