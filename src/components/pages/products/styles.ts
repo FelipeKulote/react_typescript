@@ -28,7 +28,7 @@ export const Styledconfig = styled.div`
     border-radius: 5px;
     font-size: 2rem;
     cursor: pointer;
-    background-color: transparent;
+    background-color: #5d5d5b;
   }
 `
 
