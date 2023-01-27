@@ -1,36 +1,34 @@
-import { FormEvent, useEffect, useState } from "react";
-import { api } from "../../../utils/api/api";
+import { FormEvent, useState } from "react";
+import { FormCreateUser } from "./styles";
 
 export function FormUser() {
-    const [newUser, setNewUser] = useState();
-  const [loading, setLoading] = useState(false);
+  const [newUser, setNewUser] = useState();
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    setLoading(true);
     e.preventDefault();
     // await api.createUser(newUser);
-    setLoading(false);
   }
 
-  useEffect(() => {
-
-  }, [loading]);
-
   return (
-  <div>
-    <form onSubmit={handleSubmit}>
+    <div>
+      <FormCreateUser onSubmit={handleSubmit}>
         <h2>Cadastre-se</h2>
-        <h3>Nome</h3>
-        <input type="text" />
-        <h3>Senha</h3>
-        <input type="password" />
-        <h3>Confirme sua senha</h3>
-        <input type="password" />
-        <h3>CPF</h3>
-        <input type="text" />
-        <h3>Selecione uma imagem (URL)</h3>
-        <input type="text" />
-    </form>
-  </div>
-  )
+        <div>
+          <h4>Nome</h4>
+          <input type="text" />
+          <h4>E-mail</h4>
+          <input type="text" />
+          <h4>Senha</h4>
+          <input type="password" />
+          <h4>Confirme sua senha</h4>
+          <input type="password" />
+          <h4>CPF</h4>
+          <input type="text" />
+          <h4>Selecione uma imagem (URL)</h4>
+          <input type="text" />
+        </div>
+        <button>Criar</button>
+      </FormCreateUser>
+    </div>
+  );
 }
