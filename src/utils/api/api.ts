@@ -1,4 +1,5 @@
 import axios from "axios";
+import { UserPayload } from "../../components/forms/user/form-user";
 import { LoginRequest } from "../types/requests";
 
 axios.defaults.baseURL = "https://projeto-nestjs-production.up.railway.app";
@@ -51,11 +52,12 @@ export const api = {
     }
   },
 
-  // createUser: async (payload: UserPayload) => {
-  //   try {
-  //     const response = await axios.post("/user", payload);
-  //     return response.data;
-  //   } catch (err: any) {
-  //     HandleError({ message: err.message });
-  //   }
+  createUser: async (payload: UserPayload) => {
+    try {
+      const response = await axios.post("/user", payload);
+      return response.data;
+    } catch (err: any) {
+      alert(err);
+    }
+  },
 };
