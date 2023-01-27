@@ -1,4 +1,5 @@
 import axios from "axios";
+import { ProductPayload } from "../../components/forms/product/form-products";
 import { UserPayload } from "../../components/forms/user/form-user";
 import { LoginRequest } from "../types/requests";
 
@@ -49,6 +50,15 @@ export const api = {
       return response.data;
     } catch (err) {
       alert(err);
+    }
+  },
+
+  createProduct: async (payload: ProductPayload) => {
+    try {
+      const response = await axios.post("/product", payload);
+      return response.data;
+    } catch (err) {
+      alert(err)
     }
   },
 

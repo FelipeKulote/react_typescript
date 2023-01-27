@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaCog, FaFileMedical } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { api } from "../../../utils/api/api";
 import { AddProduto, ConfigButtons, StyledCard, Styledconfig, StyledImage, StyledPageProduct } from "./styles";
 
@@ -66,7 +66,9 @@ export function Products() {
           </div>
         ))}
       </StyledCard>
+      <Link to="/create-product">
       {config &&<AddProduto><FaFileMedical/></AddProduto>}
+      </Link>
     </StyledPageProduct>
   );
 }

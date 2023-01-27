@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import { FormProduct } from "./components/forms/product/form-products";
+import { FormUser } from "./components/forms/user/form-user";
 import { Login } from "./components/pages/login/login";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Products } from "./components/pages/products/products";
 import { GlobalStyle, theme } from "./global-style";
-import { ThemeProvider } from "styled-components";
-import { FormUser } from "./components/forms/user/form-user";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -15,6 +16,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
           <Route path="/" element={<Login />} />
           <Route path="/products" element={<Products />} />
           <Route path="/form-user" element={<FormUser />} />
+          <Route path="/create-product" element={<FormProduct />} />
         </Routes>
       </BrowserRouter>
       <GlobalStyle />
