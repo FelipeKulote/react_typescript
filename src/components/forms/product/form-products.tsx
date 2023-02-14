@@ -15,7 +15,7 @@ export function FormProduct() {
   const navegate = useNavigate();
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-      await api.createProduct(newProduct);
+    await api.createProduct(newProduct);
     navegate("/products");
   }
 
@@ -29,7 +29,7 @@ export function FormProduct() {
             type="text"
             name="title"
             onChange={(e) => {
-              setNewProduct({ ...newProduct, title: e.target.value });
+              setNewProduct({ ...newProduct, title: e.currentTarget.value });
             }}
             required
           />
@@ -38,7 +38,7 @@ export function FormProduct() {
             type="text"
             name="description"
             onChange={(e) => {
-              setNewProduct({ ...newProduct, description: e.target.value });
+              setNewProduct({ ...newProduct, description: e.currentTarget.value });
             }}
             required
           />
@@ -47,7 +47,7 @@ export function FormProduct() {
             type="number"
             name="price"
             onChange={(e) => {
-              setNewProduct({ ...newProduct, price: e.target.value });
+              setNewProduct({ ...newProduct, price: e.currentTarget.value });
             }}
             required
           />
@@ -56,7 +56,7 @@ export function FormProduct() {
             type="text"
             name="image"
             onChange={(e) => {
-              setNewProduct({ ...newProduct, image: e.target.value });
+              setNewProduct({ ...newProduct, image: e.currentTarget.value });
             }}
             required
           />
