@@ -3,13 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { api } from "../../../utils/api/api";
 import { FormCreateProduct } from "./styles";
 
-export type ProductPayload = {
-  title: string;
-  description: string;
-  price: number;
-  image: string;
-};
-
 export function FormProduct() {
   const [newProduct, setNewProduct] = useState<any>([]);
   const navegate = useNavigate();
@@ -47,7 +40,7 @@ export function FormProduct() {
             type="number"
             name="price"
             onChange={(e) => {
-              setNewProduct({ ...newProduct, price: e.currentTarget.value });
+              setNewProduct({ ...newProduct, price: parseFloat(e.currentTarget.value) });
             }}
             required
           />
