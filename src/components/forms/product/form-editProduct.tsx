@@ -1,19 +1,19 @@
-import { FormEvent, useState } from "react";
+import { FormEvent } from "react";
+import { useNavigate } from "react-router-dom";
 import { api } from "../../../utils/api/api";
 import { FormCreateProduct } from "./styles";
-import { updateProductPayload } from "./types";
+import { UpdateProductPayload } from "./types";
 
 export interface UpdateProductsFormProps {
-  handleControl: () => void;
-  product: updateProductPayload;
+  product: UpdateProductPayload;
 }
 
-export function FormEditProduct({ handleControl, product }: UpdateProductsFormProps) {
-
-    const [editProduct, setEditProduct] = useState<any>([]);
+export function FormEditProduct({ product }: UpdateProductsFormProps) {
+    const navegate = useNavigate();
+    // const [editProduct, setEditProduct] = useState<UpdateProductPayload[]>([]);
     async function handleSubmit(e: FormEvent<HTMLFormElement>){
         e.preventDefault();
-        const editedProduct = {
+        const data = {
             // id: currentTarget.id,
             title: e.currentTarget.value,
             description: e.currentTarget.value,
@@ -21,13 +21,13 @@ export function FormEditProduct({ handleControl, product }: UpdateProductsFormPr
             image: e.currentTarget.value,
           };
 
-        //   await api.updateProduct({ ...data, id: })
+          await api.updateProduct({ ...data, id: product.id });
+          navegate("/products")
     }
     return(
   <>
-    <div>Editar produto</div>
     <FormCreateProduct onSubmit={handleSubmit}>
-        <h2>Criação de produto</h2>
+        <h2>Edição de produto</h2>
         <div>
           <h4>Nome do produto</h4>
           <input
@@ -70,7 +70,7 @@ export function FormEditProduct({ handleControl, product }: UpdateProductsFormPr
             required
           />
         </div>
-        <button>Criar</button>
+        <button>Editar</button>
       </FormCreateProduct>
   </>
     )

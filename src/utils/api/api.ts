@@ -1,5 +1,8 @@
 import axios from "axios";
-import { ProductPayload } from "../../components/forms/product/types";
+import {
+  ProductPayload,
+  UpdateProductPayload,
+} from "../../components/forms/product/types";
 
 import { UserPayload } from "../../components/forms/user/form-user";
 import { LoginRequest } from "../types/requests";
@@ -40,7 +43,7 @@ export const api = {
       const response = await axios.post("/auth", { email, password });
       localStorage.setItem("token", response.data.token);
       return response.data;
-    } catch(err) {
+    } catch (err) {
       alert(err);
     }
   },
@@ -49,7 +52,7 @@ export const api = {
     try {
       const response = await axios.get("/product");
       return response.data;
-    } catch(err) {
+    } catch (err) {
       alert(err);
     }
   },
@@ -58,16 +61,17 @@ export const api = {
     try {
       const response = await axios.post("/product", payload);
       return response.data;
-    } catch(err) {
-      alert(err)
+    } catch (err) {
+      alert(err);
     }
   },
 
-  updateProduct: async (payload: ProductPayload) => {
-    try{
-
-    } catch(err) {
-      alert(err)
+  updateProduct: async (payload: UpdateProductPayload) => {
+    try {
+      const response = await axios.patch("/product", payload);
+      return response.data;
+    } catch (err) {
+      alert(err);
     }
   },
 
@@ -75,7 +79,7 @@ export const api = {
     try {
       const response = await axios.post("/user", payload);
       return response.data;
-    } catch(err: any) {
+    } catch (err: any) {
       alert(err);
     }
   },

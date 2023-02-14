@@ -60,7 +60,9 @@ export function Products() {
             <h5>{product.description}</h5>
             <h4>{product.price},00</h4>
             {config && <ConfigButtons>
+              <Link to={"/update-product"}>
               <button>Editar</button>
+              </Link>
               <button>Deletar</button>
             </ConfigButtons>}
           </div>

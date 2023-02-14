@@ -5,7 +5,7 @@ export type ProductPayload = {
     image: string;
   };
 
-  export type updateProductPayload = {
+  export type UpdateProductPayload = {
     id: string;
     title?: string;
     description?: string;
