@@ -57,6 +57,15 @@ export const api = {
     }
   },
 
+  getProductById: async (id: string) => {
+    try {
+      const response = await axios.get(`/product/${id}`);
+      return response.data;
+    } catch (err) {
+      alert(err);
+    }
+  },
+
   createProduct: async (payload: ProductPayload) => {
     try {
       const response = await axios.post("/product", payload);
@@ -68,7 +77,16 @@ export const api = {
 
   updateProduct: async (payload: UpdateProductPayload) => {
     try {
-      const response = await axios.patch("/product", payload);
+      const response = await axios.patch(`/product/${payload.id}`, payload);
+      return response.data;
+    } catch (err) {
+      alert(err);
+    }
+  },
+
+  deleteProduct: async (payload: string) => {
+    try {
+      const response = await axios.delete(`/product/${payload}`);
       return response.data;
     } catch (err) {
       alert(err);

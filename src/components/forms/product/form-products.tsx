@@ -55,6 +55,7 @@ export function FormProduct() {
           />
         </div>
         <button>Criar</button>
+        <button onClick={}>Cancelar</button>
       </FormCreateProduct>
     </div>
   );

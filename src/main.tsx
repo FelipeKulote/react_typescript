@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { FormEditProduct } from "./components/forms/product/form-EditProduct";
+import { FormEditProduct } from "./components/forms/product/form-editProduct";
 import { FormProduct } from "./components/forms/product/form-products";
 import { FormUser } from "./components/forms/user/form-user";
 import { Login } from "./components/pages/login/login";
@@ -18,7 +18,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
           <Route path="/products" element={<Products />} />
           <Route path="/form-user" element={<FormUser />} />
           <Route path="/create-product" element={<FormProduct />} />
-          
+          <Route path="/update-product/:id" element={<FormEditProduct />} />
         </Routes>
       </BrowserRouter>
       <GlobalStyle />

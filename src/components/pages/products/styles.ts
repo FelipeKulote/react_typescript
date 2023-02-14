@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const StyledPageProduct = styled.div`
   height: 100%;
+  padding: 10px;
+  width: 90%;
 
   h2 {
     font-size: 2rem;
