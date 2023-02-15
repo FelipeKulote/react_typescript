@@ -8,7 +8,7 @@ import { LoginForm, StyledLogin, StyledLoginPage } from "./styles";
 export function Login() {
   const [showPassword, setShowPassword] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
-  const [ loginFailed, setLoginFailed ] = useState<boolean>(false);
+  const [loginFailed, setLoginFailed] = useState<boolean>(false);
   const navigate = useNavigate();
 
   function handleShowPassword() {
@@ -53,8 +53,8 @@ export function Login() {
                   {showPassword ? <FaEyeSlash /> : <FaEye />}
                 </button>
               </div>
-            {/* <StyledInput placeholder={ loginFailed ? "Usuário e/ou senha incorretos" : ""} /> */}
-            <button type="submit">ENVIAR</button>
+              {/* <StyledInput placeholder={ loginFailed ? "Usuário e/ou senha incorretos" : ""} /> */}
+              <button type="submit">ENVIAR</button>
             </StyledLogin>
             <h4>Já possui uma conta?</h4>
             <Link to="/form-user">Registre-se</Link>

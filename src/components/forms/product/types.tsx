@@ -1,25 +1,25 @@
 export type ProductPayload = {
-    title: string;
-    description: string;
-    price: number;
-    image: string;
-  };
+  title: string;
+  description: string;
+  price: number;
+  image: string;
+};
 
-  export type UpdateProductPayload = {
-    id: string;
-    title?: string;
-    description?: string;
-    price?: number;
-    image?: string;
-  };
+export type UpdateProductPayload = {
+  id: string;
+  title?: string;
+  description?: string;
+  price?: number;
+  image?: string;
+};
 
-// export type Products = {
-//   id: string;
-//   title: string;
-//   description: string;
-//   price: number;
-//   image: string;
-// };
+export type Products = {
+  id: string;
+  title: string;
+  description: string;
+  price: number;
+  image: string;
+};
 
 export interface InputProps {
   placeholder: string;

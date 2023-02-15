@@ -94,7 +94,9 @@ export function Products() {
                 <Link to={`/update-product/${product.id}`}>
                   <EditButton>Editar</EditButton>
                 </Link>
-                <DeleteButton onClick={() => handleDeleteProduct(product.id)}>Deletar</DeleteButton>
+                <DeleteButton onClick={() => handleDeleteProduct(product.id)}>
+                  Deletar
+                </DeleteButton>
               </ConfigButtons>
             )}
           </div>

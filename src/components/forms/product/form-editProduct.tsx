@@ -1,7 +1,12 @@
 import { FormEvent, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { api } from "../../../utils/api/api";
-import { ButtonsCreate, CancelButton, CreateButton, FormCreateProduct } from "./styles";
+import {
+  ButtonsCreate,
+  CancelButton,
+  CreateButton,
+  FormCreateProduct,
+} from "./styles";
 import { UpdateProductPayload } from "./types";
 
 export interface UpdateProductsFormProps {

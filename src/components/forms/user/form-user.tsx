@@ -13,7 +13,6 @@ export type UserPayload = {
 };
 
 export function FormUser() {
-   
   const [newUser, setNewUser] = useState<any>([]);
   const navegate = useNavigate();
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -112,48 +111,48 @@ export function FormUser() {
 //   cancel?: () => void;
 // }
 // export function FormUser() {
-  //   const inputOptions: InputProps[] = [
-  //     {
-  //       name: "name",
-  //       type: "text",
-  //       placeholder: "Nome",
-  //     },
-  //     {
-  //       name: "email",
-  //       type: "text",
-  //       placeholder: "E-mail",
-  //     },
-  //     {
-  //       name: "password",
-  //       type: "password",
-  //       placeholder: "Senha",
-  //     },
-  //     {
-  //       name: "confirmPassword",
-  //       type: "password",
-  //       placeholder: "Confirmar senha",
-  //     },
-  //     {
-  //       name: "CPF",
-  //       type: "text",
-  //       placeholder: "CPF",
-  //     },
-  //     {
-  //       name: "image",
-  //       type: "text",
-  //       placeholder: "Imagem (URL)",
-  //     },
-  //   ];
+//   const inputOptions: InputProps[] = [
+//     {
+//       name: "name",
+//       type: "text",
+//       placeholder: "Nome",
+//     },
+//     {
+//       name: "email",
+//       type: "text",
+//       placeholder: "E-mail",
+//     },
+//     {
+//       name: "password",
+//       type: "password",
+//       placeholder: "Senha",
+//     },
+//     {
+//       name: "confirmPassword",
+//       type: "password",
+//       placeholder: "Confirmar senha",
+//     },
+//     {
+//       name: "CPF",
+//       type: "text",
+//       placeholder: "CPF",
+//     },
+//     {
+//       name: "image",
+//       type: "text",
+//       placeholder: "Imagem (URL)",
+//     },
+//   ];
 
-  //   return (
-  //     <div>
-  //       <Form
-  //         title={"Cadastre-se"}
-  //         inputs={inputOptions}
-  //         onSubmit={(e) => {
-  //           e.preventDefault();
-  //         }}
-  //       />
-  //     </div>
-  //   );
-  // }
+//   return (
+//     <div>
+//       <Form
+//         title={"Cadastre-se"}
+//         inputs={inputOptions}
+//         onSubmit={(e) => {
+//           e.preventDefault();
+//         }}
+//       />
+//     </div>
+//   );
+// }

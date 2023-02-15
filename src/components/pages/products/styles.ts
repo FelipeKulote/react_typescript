@@ -51,6 +51,7 @@ export const StyledCard = styled.div`
   div {
     padding: 10px;
     border: 1px solid;
+    border-radius: 10px;
   }
 
   h3 {
@@ -75,7 +76,7 @@ export const ConfigButtons = styled.div`
 export const EditButton = styled.button`
   padding: 3px;
   border: 2px solid;
-  border-radius: 2px;
+  border-radius: 4px;
   cursor: pointer;
   transition: all 0.2s;
 
@@ -87,7 +88,7 @@ export const EditButton = styled.button`
 export const DeleteButton = styled.button`
   padding: 3px;
   border: 2px solid red;
-  border-radius: 2px;
+  border-radius: 4px;
   cursor: pointer;
   transition: all 0.2s;
 

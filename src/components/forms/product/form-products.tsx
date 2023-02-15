@@ -1,10 +1,22 @@
 import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../../utils/api/api";
-import { ButtonsCreate, CancelButton, CreateButton, FormCreateProduct } from "./styles";
+import {
+  ButtonsCreate,
+  CancelButton,
+  CreateButton,
+  FormCreateProduct,
+} from "./styles";
+import { Products } from "./types";
 
 export function FormProduct() {
-  const [newProduct, setNewProduct] = useState<any>([]);
+  const [newProduct, setNewProduct] = useState<Products>({
+    id: "",
+    title: "",
+    description: "",
+    price: 0,
+    image: "",
+  });
   const navegate = useNavigate();
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
