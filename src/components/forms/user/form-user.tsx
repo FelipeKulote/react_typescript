@@ -1,7 +1,12 @@
 import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../../utils/api/api";
-import { FormCreateUser } from "./styles";
+import {
+  ButtonsCreate,
+  CancelButton,
+  CreateButton,
+  FormCreateUser,
+} from "./styles";
 
 export type UserPayload = {
   name: string;
@@ -18,6 +23,10 @@ export function FormUser() {
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     await api.createUser(newUser);
+    navegate("/");
+  }
+
+  function handleCancelCreate() {
     navegate("/");
   }
 
@@ -91,7 +100,10 @@ export function FormUser() {
             required
           />
         </div>
-        <button>Criar</button>
+        <ButtonsCreate>
+          <CreateButton>Criar</CreateButton>
+          <CancelButton onClick={handleCancelCreate}>Cancelar</CancelButton>
+        </ButtonsCreate>
       </FormCreateUser>
     </div>
   );
