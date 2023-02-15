@@ -5,6 +5,8 @@ import { api } from "../../../utils/api/api";
 import {
   AddProduto,
   ConfigButtons,
+  DeleteButton,
+  EditButton,
   StyledCard,
   Styledconfig,
   StyledImage,
@@ -90,9 +92,9 @@ export function Products() {
             {config && (
               <ConfigButtons>
                 <Link to={`/update-product/${product.id}`}>
-                  <button>Editar</button>
+                  <EditButton>Editar</EditButton>
                 </Link>
-                <button onClick={() => handleDeleteProduct(product.id)}>Deletar</button>
+                <DeleteButton onClick={() => handleDeleteProduct(product.id)}>Deletar</DeleteButton>
               </ConfigButtons>
             )}
           </div>

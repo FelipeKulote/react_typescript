@@ -31,8 +31,13 @@ export const Styledconfig = styled.div`
     font-size: 2rem;
     cursor: pointer;
     background-color: #5d5d5b;
+    transition: all 0.2s;
+
+    :hover {
+      scale: 1.2;
+    }
   }
-`
+`;
 
 export const StyledCard = styled.div`
   margin: 30px;
@@ -66,14 +71,30 @@ export const StyledImage = styled.img`
 export const ConfigButtons = styled.div`
   display: flex;
   justify-content: space-evenly;
+`;
+export const EditButton = styled.button`
+  padding: 3px;
+  border: 2px solid;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
 
-  button {
-    padding: 3px;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer
+  :hover {
+    scale: 1.2;
   }
-`
+`;
+
+export const DeleteButton = styled.button`
+  padding: 3px;
+  border: 2px solid red;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  :hover {
+    scale: 1.2;
+  }
+`;
 
 export const AddProduto = styled.button`
   margin: 0 auto;
@@ -83,4 +104,9 @@ export const AddProduto = styled.button`
   min-width: 100px;
   min-height: 100px;
   cursor: pointer;
-`
+  transition: all 0.2s;
+
+  :hover {
+    scale: 1.2;
+  }
+`;

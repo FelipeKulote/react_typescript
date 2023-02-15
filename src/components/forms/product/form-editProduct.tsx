@@ -1,7 +1,7 @@
 import { FormEvent, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { api } from "../../../utils/api/api";
-import { FormCreateProduct } from "./styles";
+import { ButtonsCreate, CancelButton, CreateButton, FormCreateProduct } from "./styles";
 import { UpdateProductPayload } from "./types";
 
 export interface UpdateProductsFormProps {
@@ -39,6 +39,10 @@ export function FormEditProduct() {
         })
       );
     }
+  }
+
+  function handleCancelCreate() {
+    navegate("/products");
   }
 
   useEffect(() => {
@@ -97,7 +101,10 @@ export function FormEditProduct() {
             required
           />
         </div>
-        <button>Editar</button>
+        <ButtonsCreate>
+          <CreateButton>Editar</CreateButton>
+          <CancelButton onClick={handleCancelCreate}>Cancelar</CancelButton>
+        </ButtonsCreate>
       </FormCreateProduct>
     </>
   );
